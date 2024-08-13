@@ -14,4 +14,122 @@ datasource db {
 }
 
 
+model Alumni{
+  email String @id 
+  name String
+  passwd String @default("alumni")
+  details AlumniDetails[]
+}
+
+
+model AlumniDetails{
+  email String @id 
+  phno Int
+  github String
+  linkedin String
+  skills String[]
+  education AlumniEducation[]
+  connection Connection[]
+  alumniblog AlumniBlog[]
+  alumniworkshop Workshop[]
+  alumniemail Alumni @relation(fields: [email],references: [email],onDelete: Cascade)
+
+
+}
+
+model AlumniEducation{
+  id Int @id @default(autoincrement())
+  collegename String
+  course String
+  startYear Int
+  endYear Int 
+  major String
+  alumniemail String
+  alumni AlumniDetails @relation(fields: [alumniemail],references: [email],onDelete: Cascade) 
+
+}
+model UserEducation{
+  id Int @id @default(autoincrement())
+  collegename String
+  course String
+  startyear Int
+  endyear Int 
+  major String
+  useremail String
+  user UserDetails @relation(fields: [useremail],references: [email],onDelete: Cascade) 
+
+}
+
+model Connection{
+  id Int @id @default(autoincrement())
+  alumniemail String 
+  useremail String
+  alumni AlumniDetails @relation(fields: [alumniemail],references: [email],onDelete: Cascade)
+  user UserDetails @relation(fields: [useremail],references: [email],onDelete: Cascade)
+
+}
+
+model User{
+  email String @id
+  password String @default("user")
+  name String 
+  details UserDetails[]
+}
+
+model UserDetails{
+  email String @id
+  password String
+  name String
+  phno Int
+  linkedin String
+  github String
+  interest String[]
+  skills String[]
+  education UserEducation[]
+  connection Connection[]
+  workshops WorkshopParticipant[]
+  useremail User @relation(fields: [email],references: [email],onDelete: Cascade) 
+ 
+
+}
+
+model AlumniBlog{
+  id Int @id @default(autoincrement())
+  alumniemail String
+  title String
+  content String
+  image String
+  likes Int
+  alumni AlumniDetails @relation(fields: [alumniemail],references: [email],onDelete: Cascade)
+
+}
+model Workshop{
+  id Int @id @default(autoincrement())
+  alumniemail String
+  title String
+  mode String
+  price Int
+  date String
+  description String
+  stime String
+  etime String
+  count Int
+  alumni AlumniDetails @relation(fields: [alumniemail],references: [email],onDelete: Cascade)
+  partcipants WorkshopParticipant[] 
+
+}
+
+model WorkshopParticipant{
+  id Int @id @default(autoincrement())
+  workshopid Int
+  participant String
+  workshop Workshop @relation(fields: [workshopid],references: [id],onDelete: Cascade)
+  user UserDetails @relation(fields: [participant],references: [email],onDelete: Cascade)
+
+}
+
+
+
+
+
 
