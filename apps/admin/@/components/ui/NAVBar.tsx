@@ -22,7 +22,7 @@ export  function Navbar() {
                     <Link href="#" className="text-sm hover:underline" prefetch={false}>
                         Alumnis
                     </Link>
-                    <Link href="#" className="text-sm hover:underline" prefetch={false}>
+                    <Link href="/student" className="text-sm hover:underline" prefetch={false}>
                         Students
                     </Link>
                     <Link href="#" className="text-sm hover:underline" prefetch={false}>
