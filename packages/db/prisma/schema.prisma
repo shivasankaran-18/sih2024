@@ -24,16 +24,32 @@ model Alumni{
 
 model AlumniDetails{
   email String @id 
-  phno Int
+  phno String
   github String
   linkedin String
   skills String[]
+  achievements String[]
   education AlumniEducation[]
+  work AlumniWork[]
   connection Connection[]
   alumniblog AlumniBlog[]
   alumniworkshop Workshop[]
   alumniemail Alumni @relation(fields: [email],references: [email],onDelete: Cascade)
 
+
+}
+
+model AlumniWork{
+  id Int @id @default(autoincrement())
+  alumniemail String
+  companyname String
+  role String
+  startYear Int
+  endYear String
+  alumni AlumniDetails @relation(fields: [alumniemail],references: [email],onDelete: Cascade)
+
+
+  
 
 }
 
@@ -48,6 +64,30 @@ model AlumniEducation{
   alumni AlumniDetails @relation(fields: [alumniemail],references: [email],onDelete: Cascade) 
 
 }
+model User{
+  email String @id
+  password String @default("user")
+  name String 
+  details UserDetails[]
+}
+
+model UserDetails{
+  email String @id
+  password String
+  name String
+  phno String
+  linkedin String
+  github String
+  interest String[]
+  skills String[]
+  education UserEducation[]
+  connection Connection[]
+  workshops WorkshopParticipant[]
+  useremail User @relation(fields: [email],references: [email],onDelete: Cascade) 
+ 
+
+}
+
 model UserEducation{
   id Int @id @default(autoincrement())
   collegename String
@@ -69,29 +109,8 @@ model Connection{
 
 }
 
-model User{
-  email String @id
-  password String @default("user")
-  name String 
-  details UserDetails[]
-}
 
-model UserDetails{
-  email String @id
-  password String
-  name String
-  phno Int
-  linkedin String
-  github String
-  interest String[]
-  skills String[]
-  education UserEducation[]
-  connection Connection[]
-  workshops WorkshopParticipant[]
-  useremail User @relation(fields: [email],references: [email],onDelete: Cascade) 
- 
 
-}
 
 model AlumniBlog{
   id Int @id @default(autoincrement())

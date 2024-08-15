@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import { Providers } from "../providers";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -22,10 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <Providers>
     <html lang="en">
       <body >
         {children}
       </body>
     </html>
+    </Providers>
   );
 }
