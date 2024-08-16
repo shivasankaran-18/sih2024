@@ -12,6 +12,6 @@ export default async  function Home() {
   redirect("/api/auth/signin")
  }
  else{
-  redirect("/adddetails")
+  redirect("/home")
  }
 }

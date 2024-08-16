@@ -13,7 +13,7 @@ export default function Student() {
   const session=useSession().data?.user
 
   useEffect(()=>{
-    axios.get(`/api/studconn?email=${session?.email}`).then((data)=>{
+    axios.get(`/api/alumniconn?email=${session?.email}`).then((data)=>{
       console.log(data.data.data)
       setStudents(data.data.data)
       setFlag(false)
@@ -38,28 +38,28 @@ export default function Student() {
 
     return (<>
       <Navbar/>
-    <div className=" bg-black w-screen h-screen mx-auto py-12 px-4 md:px-6">
+    <div className=" bg-black w-screen mx-auto py-12 px-4 md:px-6 h-screen">
       <div className="text-center space-y-4 mb-8">
         <h1 className="text-3xl font-bold">Alumni Followers</h1>
         <p className="text-muted-foreground max-w-[700px] mx-auto">
           Check out the students who are following our alumni network. Click on their profile to learn more about them.
         </p>
       </div>
-            <div className="flex flex-col w-full  justify-center items-center gap-6">
+            <div className="flex flex-col w-full justify-center items-center gap-6">
 
 
         {//@ts-ignore
         students.map((val)=>{
           return(
-            <div className="bg-card rounded-lg p-4  w-1/3 flex items-center gap-4">
+            <div className="bg-card rounded-lg p-4 w-1/3 flex items-center gap-4">
             <Avatar className="w-12 h-12">
               <AvatarImage src="/placeholder-user.jpg" alt="John Doe" />
               <AvatarFallback>JD</AvatarFallback>
             </Avatar>
             <div className="flex-1">
-              <div className="font-medium">{val.username}</div>
-              <div className="text-sm text-muted-foreground">Student</div>
-              <div className="text-sm text-muted-foreground">{val.useremail}</div>
+              <div className="font-medium">{val.otheralumniname}</div>
+              <div className="text-sm text-muted-foreground">Alumni</div>
+              <div className="text-sm text-muted-foreground">{val.otheralumniemail}</div>
             </div>
             <Link
               href="#"

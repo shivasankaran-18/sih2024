@@ -41,7 +41,7 @@ export default function Component() {
   const [achievements, setAchievements] = useState<string[]>([]);
   const [achievementInput, setAchievementInput] = useState<string>("");
 
-  // Functions for education handling
+
   const handleAddEducation = () => {
     setEducationFields([...educationFields, {
       collegeName: "",
@@ -65,7 +65,7 @@ export default function Component() {
     setEducationFields(updatedFields);
   };
 
-  // Functions for work handling
+
   const handleAddWork = () => {
     setWorkFields([...workFields, {
       companyName: "",
@@ -88,7 +88,7 @@ export default function Component() {
     setWorkFields(updatedFields);
   };
 
-  // Functions for skills handling
+
   const handleSkillAdd = () => {
     if (skillInput && !skills.includes(skillInput)) {
       setSkills([...skills, skillInput]);
@@ -100,7 +100,7 @@ export default function Component() {
     setSkills(skills.filter(skill => skill !== skillToRemove));
   };
 
-  // Functions for achievements handling
+
   const handleAchievementAdd = () => {
     if (achievementInput && !achievements.includes(achievementInput)) {
       setAchievements([...achievements, achievementInput]);
@@ -134,7 +134,7 @@ export default function Component() {
               <Input id="linkedin" placeholder="https://linkedin.com/in/johndoe" onChange={(e) => setLinkedin(e.target.value)} />
             </div>
 
-            {/* Skills Section */}
+   
             <div className="space-y-2">
               <Label htmlFor="skills">Skills</Label>
               <div className="border border-gray-300 rounded-md p-2">
@@ -162,7 +162,7 @@ export default function Component() {
               </div>
             </div>
 
-            {/* Achievements Section */}
+
             <div className="space-y-2">
               <Label htmlFor="achievements">Achievements</Label>
               <div className="border border-gray-300 rounded-md p-2">
@@ -190,7 +190,7 @@ export default function Component() {
               </div>
             </div>
 
-            {/* Education Section */}
+      
             <div className="space-y-2">
               <Label>Education</Label>
               {educationFields.map((field, index) => (
@@ -254,7 +254,7 @@ export default function Component() {
               <Button variant="secondary" onClick={handleAddEducation}>Add More Education</Button>
             </div>
 
-            {/* Work Experience Section */}
+      
             <div className="space-y-2">
               <Label>Work Experience</Label>
               {workFields.map((field, index) => (
@@ -324,7 +324,7 @@ export default function Component() {
               console.log(res)
               if(res.data.success)
                 {
-                  redirect("/home")
+                  redirect("/blogs")
                 }
                 else{
                   window.alert("error")

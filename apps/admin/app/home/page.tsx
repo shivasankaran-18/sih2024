@@ -1,24 +1,17 @@
-// export default function Home() {
-//     return (
-//         <div className="text-3xl bg-red-600 w-screen">
-//             hello
-        
-//         </div>
 
-
-//     )
-
-
-// }
 
 import Link from "next/link"
-import { Input } from "../../@/components/ui/input"
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "../../@/components/ui/dropdown-menu"
-import { Button } from "../../@/components/ui/button"
+
 import { Avatar, AvatarImage, AvatarFallback } from "../../@/components/ui/avatar"
 import { Card, CardContent } from "../../@/components/ui/card"
 import {Navbar} from "../../@/components/ui/NAVBar"
+
 export default function Home() {
+  // const [students,setStudents]=useState();
+  // const [alumnis,setAlumnis]=useState();
+
+
+
   const upcomingWorkshops = [
     {
       title: "Introduction to React",

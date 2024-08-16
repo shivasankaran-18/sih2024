@@ -3,10 +3,9 @@ import { NextRequest, NextResponse } from "next/server"
 
 
 export const GET=async(req:NextRequest)=>{
-
-    const email= req.nextUrl.searchParams.get("email")
-
-    const data=await prisma.alumniConnection.findMany({
+    const email=req.nextUrl.searchParams.get("email")
+    console.log(email +"**********")
+    const data=await prisma.userConnection.findMany({
         where:{
             alumniemail:email ||""
         }
@@ -21,14 +20,14 @@ export const GET=async(req:NextRequest)=>{
 
 export const POST=async(req:NextRequest)=>{
 
-    const {alumniemail,otheralumniemail,otheralumniname}=await req.json()
+    const {alumniemail,useremail,username}=await req.json()
 
 
-    const data=await prisma.alumniConnection.create({
+    const data=await prisma.userConnection.create({
         data:{
             alumniemail,
-            otheralumniemail,
-            otheralumniname
+            username,
+            useremail,
             
         }
     })

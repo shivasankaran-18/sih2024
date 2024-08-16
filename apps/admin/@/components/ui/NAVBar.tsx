@@ -7,7 +7,7 @@ import { Card, CardContent } from "./card"
 export  function Navbar() { 
     return (
         <header className="bg-blue-600 text-white py-4 px-6 flex items-center justify-between">
-            <Link href="#" className="flex items-center gap-2" prefetch={false}>
+            <Link href="/home" className="flex items-center gap-2" prefetch={false}>
                 <span className="text-lg font-bold">Alumni Connect</span>
             </Link>
             <div className="flex items-center gap-4">
@@ -16,21 +16,21 @@ export  function Navbar() {
                     className="bg-[#eef3f8] text-[#0077b6] px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#0077b6] focus:ring-offset-2"
                 />
                 <div className="flex items-center gap-4">
-                    <Link href="#" className="text-sm hover:underline" prefetch={false}>
+                    <Link href="/home" className="text-sm hover:underline" prefetch={false}>
                         Home
                     </Link>
-                    <Link href="#" className="text-sm hover:underline" prefetch={false}>
+                    <Link href="/alumni" className="text-sm hover:underline" prefetch={false}>
                         Alumnis
                     </Link>
                     <Link href="/student" className="text-sm hover:underline" prefetch={false}>
                         Students
                     </Link>
-                    <Link href="#" className="text-sm hover:underline" prefetch={false}>
+                    <Link href="/workshop" className="text-sm hover:underline" prefetch={false}>
                         Workshop
                     </Link>
-                    <Link href="/blogs" className="text-sm hover:underline" prefetch={false}>
+                    {/* <Link href="/blogs" className="text-sm hover:underline" prefetch={false}>
                         Blogs
-                    </Link>
+                    </Link> */}
                 </div>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
