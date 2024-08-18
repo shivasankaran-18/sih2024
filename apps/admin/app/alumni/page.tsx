@@ -40,7 +40,7 @@ export default function Student() {
       <Navbar/>
     <div className=" bg-black w-screen mx-auto py-12 px-4 md:px-6 h-screen">
       <div className="text-center space-y-4 mb-8">
-        <h1 className="text-3xl font-bold">Alumni Followers</h1>
+        <h1 className="text-3xl text-white font-bold">Alumni Followers</h1>
         <p className="text-muted-foreground max-w-[700px] mx-auto">
           Check out the students who are following our alumni network. Click on their profile to learn more about them.
         </p>
@@ -62,7 +62,7 @@ export default function Student() {
               <div className="text-sm text-muted-foreground">{val.otheralumniemail}</div>
             </div>
             <Link
-              href="#"
+              href="/profile"
               className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >

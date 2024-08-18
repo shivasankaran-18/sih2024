@@ -20,7 +20,7 @@ export  function Navbar() {
                         Home
                     </Link>
                     <Link href="/alumni" className="text-sm hover:underline" prefetch={false}>
-                        Alumnis
+                        Alumni
                     </Link>
                     <Link href="/student" className="text-sm hover:underline" prefetch={false}>
                         Students

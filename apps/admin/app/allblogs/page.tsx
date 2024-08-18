@@ -5,13 +5,13 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLab
 import { Button } from "../../@/components/ui/button"
 export  default function Allblogs() {
     return (
-      <div className="flex flex-col text-white bg-black min-h-screen">
+      <div className="flex flex-col text-white  bg-black min-h-screen">
         <header className="bg-background border-b">
           
            <Navbar/>
           
         </header>
-        <main className="flex-1 container mx-auto px-4 py-8 md:py-12">
+        <main className="flex-1 container mx-auto   px-4 py-8 md:py-12">
           <div className="space-y-8">
             <div className="flex items-center justify-between">
               <h1 className="text-3xl font-bold">All Blogs</h1>

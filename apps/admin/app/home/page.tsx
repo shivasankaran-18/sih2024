@@ -33,7 +33,7 @@ export default function Home() {
     },
   ]
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col  min-h-[100dvh]">
     
         <Navbar/>
       <main className="flex-1 bg-black">
