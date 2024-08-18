@@ -1,8 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
   provider = "prisma-client-js"
@@ -19,6 +15,7 @@ model Alumni{
   name String
   passwd String @default("alumni")
   details AlumniDetails[]
+  conversation Conversation[]
 }
 
 
@@ -71,6 +68,7 @@ model User{
   password String @default("user")
   name String 
   details UserDetails[]
+  conversation Conversation[]
 }
 
 model UserDetails{
@@ -160,6 +158,26 @@ model WorkshopParticipant{
   user UserDetails @relation(fields: [participant],references: [email],onDelete: Cascade)
 
 }
+
+model Conversation {
+  id          Int       @id @default(autoincrement())
+  alumniemail String
+  studemail   String
+  alumni Alumni @relation(fields: [alumniemail],references: [email],onDelete: Cascade)
+  student User @relation(fields: [studemail],references: [email],onDelete: Cascade)
+  messages    Message[]
+}
+model Message {
+  id           Int       @id @default(autoincrement())
+  convId       Int
+  content      String
+  senderEmail  String
+  receiverEmail String
+  date         String
+  time         DateTime
+  conversation Conversation @relation(fields: [convId], references: [id])
+}
+
 
 
 

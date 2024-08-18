@@ -67,7 +67,7 @@ export default function Home() {
                     <div>
                       <h3 className="text-lg font-bold">Jane Smith</h3>
                       <p className="text-muted-foreground">Business Administration</p>{" "}
-                      <p className="text-muted-foreground">Sophomore</p>
+                      <p className=" text-muted-foreground">Sophomore</p>
                       <p className="text-muted-foreground">University of Southern California</p>
                     </div>
                   </div>
