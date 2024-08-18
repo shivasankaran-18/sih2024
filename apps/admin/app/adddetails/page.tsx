@@ -7,12 +7,12 @@ import { Input } from "../../@/components/ui/input"
 import { Button } from "../../@/components/ui/button"
 import axios from "axios"
 import {  useSession } from "next-auth/react";
-import { redirect } from "next/navigation"
+import { useRouter } from "next/router"
 
 
 export default function Component() {
   const user = useSession().data?.user;
-  
+  const router=useRouter()
   const [educationFields, setEducationFields] = useState([
     {
       collegeName: "",
@@ -324,7 +324,7 @@ export default function Component() {
               console.log(res)
               if(res.data.success)
                 {
-                  redirect("/blogs")
+                  router.push("/home")
                 }
                 else{
                   window.alert("error")
