@@ -14,8 +14,11 @@ export default function Component() {
   const addSubtopic = () => {
     //@ts-ignore
     setSubtopics([
+       //@ts-ignore
       ...subtopics,
+       //@ts-ignore
       {
+         
         subtitle: "",
         body: "",
         image: "",
