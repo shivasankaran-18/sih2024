@@ -28,9 +28,9 @@ export  function Navbar() {
                     <Link href="/workshop" className="text-sm hover:underline" prefetch={false}>
                         Workshop
                     </Link>
-                    {/* <Link href="/blogs" className="text-sm hover:underline" prefetch={false}>
+                    <Link href="/blogs" className="text-sm hover:underline" prefetch={false}>
                         Blogs
-                    </Link> */}
+                    </Link> 
                 </div>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -43,17 +43,12 @@ export  function Navbar() {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                         <DropdownMenuItem>
-                            <Link href="#" className="flex items-center gap-2" prefetch={false}>
+                            <Link href="/myprofile" className="flex items-center gap-2" prefetch={false}>
                                 <UserIcon className="h-4 w-4" />
                                 <span>Profile</span>
                             </Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <Link href="#" className="flex items-center gap-2" prefetch={false}>
-                                <SettingsIcon className="h-4 w-4" />
-                                <span>Settings</span>
-                            </Link>
-                        </DropdownMenuItem>
+                        
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
                             <Link href="#" className="flex items-center gap-2" prefetch={false}>

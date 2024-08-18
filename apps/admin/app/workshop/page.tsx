@@ -13,7 +13,7 @@ import { useSession } from "next-auth/react"
 
 
 
-export default function Blogs() {
+export default function Workshops() {
   const [activeTab, setActiveTab] = useState("all")
   const [workshops,setWorkshops]=useState()
   const [flag,setFlag]=useState<boolean>(true)
@@ -52,7 +52,7 @@ export default function Blogs() {
                 onClick={() => setActiveTab("all")}
                 prefetch={false}
               >
-                All Blogs
+                All workshops
               </Link>
               <Link
                 href="#"
@@ -62,7 +62,7 @@ export default function Blogs() {
                 onClick={() => setActiveTab("my")}
                 prefetch={false}
               >
-                My Blogs
+                My Workshops
               </Link>
             </nav>
           </div>
@@ -106,7 +106,7 @@ export default function Blogs() {
           </section>
           {activeTab === "my" && (
             <div className="mt-6 flex justify-end">
-              <Button>Create Blog</Button>
+              <Button>Create workshop</Button>
             </div>
           )}
         </main>
